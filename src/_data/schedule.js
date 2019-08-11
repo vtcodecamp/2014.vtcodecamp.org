@@ -20,7 +20,7 @@ function buildSchedule()
     for (let space of Object.values(spaces)) {
         let track = tracks[space.track];
         scheduleTable.head.push({
-            title: track.title,
+            title: track ? track.title : '',
             subtitle: space.title,
             type: 'track',
         })
