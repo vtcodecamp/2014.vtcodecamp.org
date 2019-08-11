@@ -52,6 +52,9 @@ function buildSchedule()
                 title_link: title_link,
                 speakers: [],
             };
+            if (session.sessions) {
+                tableCell.sessions = session.sessions;
+            }
             for (let speakerCode of session.speakers) {
                 let speaker = speakers[speakerCode];
                 tableCell.speakers.push({
@@ -81,6 +84,13 @@ function getSessionsByTimeSpace()
         sessionsByTimeSpace[timeSlug][spaceSlug] = session;
     }
 
+    // Remove lunch sessions from list
+    let lunchPeriod = sessionsByTimeSpace[1200];
+    sessionsByTimeSpace[1200] = {
+        "main-hall": lunchPeriod["main-hall"]
+    }
+
+    // Create placeholders for timeslots with no session in a given room
     for (let [timeSlug, timePeriod] of Object.entries(sessionsByTimeSpace)) {
         if (timePeriod['main-hall']) {
             continue;
@@ -92,6 +102,7 @@ function getSessionsByTimeSpace()
         }
     }
 
+    // Sort each timeslot by room code
     let sessionsByTimeSpaceSorted = {};
     for (let [timeCode, spaces] of Object.entries(sessionsByTimeSpace)) {
         let spacesSorted = {};

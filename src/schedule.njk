@@ -38,7 +38,15 @@ meta_description: The Vermont Code Camp 2014 schedule included sessions on a var
                     {{ cell.title }}
                 </td>
             {% elif cell.type == "plenumSession" %}
-                <td colspan="5"> {{ cell.title }} </td>
+                <td colspan="5"> 
+                    {{ cell.title }} 
+                    {% for session in cell.sessions %}
+                        <p> 
+                            <a href="{{session.speakerLink}}">{{session.speaker}}</a> presents 
+                            <a href="{{session.link}}">"{{session.name}}"</a> in {{session.room}} 
+                        </p> 
+                    {% endfor %}
+                </td>
             {% elif cell.type == "session" %}
                 <td> 
                     <a href="{{ cell.title_link }}">{{ cell.title }}</a>

@@ -249,10 +249,26 @@
     "lunch": {
         "slug": "lunch",
         "title": "Lunch",
-        "description": "[Mark Olofson](/2014/speakers#mark-olofson) presents [\"It Takes a Village (to Teach Kids to Code)\"](/2014/sessions#it-takes-a-village) in Room 1\n\n[John Cicilio](/2014/speakers#john-cicilio) presents [\"Building a Web Controlled Telepresence Rover\"](/2014/sessions#building-a-web-controlled-telepresence-rover) in Room 4",
+        "description": "",
         "space": "main-hall",
         "timePeriod": 1200,
-        "speakers": []
+        "speakers": [],
+        "sessions": [
+            {
+                "speaker": "Mark Olofson",
+                "speakerLink": "/speakers#mark-olofson",
+                "name": "It Takes a Village (to Teach Kids to Code)",
+                "link": "/sessions#it-takes-a-village",
+                "room": "Room 1"
+            },
+            {
+                "speaker": "John Cicilio",
+                "speakerLink": "/speakers#john-cicilio",
+                "name": "Building a Web Controlled Telepresence Rover",
+                "link": "/sessions#building-a-web-controlled-telepresence-rover",
+                "room": "Room 4"
+            }
+        ]
     },
     "managing-builds-with-gradle": {
         "slug": "managing-builds-with-gradle",
